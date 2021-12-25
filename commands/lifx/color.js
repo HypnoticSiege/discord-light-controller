@@ -8,10 +8,16 @@ module.exports = {
         if (hex.test(args.join(" ")) == true) {
             await client.lifx.color.all({
                 hex: args.join(" ")
-            }); 
+            });
             message.reply('Set color to ' + args.join(" "));
+        } else if (client.config.colors.find(x => x.name == args.join(" ").toLowerCase())) {
+            const color = client.config.colors.find(x => x.name == args.join(" ").toLowerCase())
+            await client.lifx.color.all({
+                hex: color.hex
+            });
+            message.reply('Set color to ' + args.join(" "))
         } else {
-            message.reply('Not a valid Hex color!')
+            message.reply("That's not a valid color!")
         }
     }
 };

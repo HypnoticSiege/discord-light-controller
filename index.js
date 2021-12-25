@@ -9,6 +9,7 @@ const client = new Discord.Client();
 client.login(config.discord.token);
 lifx.init({ appToken: config.lifx.token });
 client.lifx = lifx;
+client.config = config;
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
@@ -35,3 +36,10 @@ readdir("./events/", (err, files) => {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
+async function main() {
+    const color = config.colors.find(x => x.name == 'blue').hex
+    console.log(color);
+}
+
+main();
