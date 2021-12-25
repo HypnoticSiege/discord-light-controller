@@ -2,13 +2,7 @@ module.exports = {
     //Discord Configuration
     discord: {
         token: '',
-        prefix: '!',
-
-        embed: {
-            "color": "#AD91FF",
-            "footertext": "Discord Light Controller",
-            "footericon": "https://hypnoticsiege.net/images/uploads/logo.png"
-        }
+        prefix: '!'
     },
 
     //Lifx Configuration

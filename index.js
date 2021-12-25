@@ -35,20 +35,3 @@ readdir("./events/", (err, files) => {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
-
-async function main() {
-    //Get all lights
-    const lights = await lifx.get.all();
-
-    //Turn Lights On
-    async function turnOn() {
-        await lifx.power.all('on');
-    }
-
-    //Turn Lights Off
-    async function turnOff() {
-        await lifx.power.all('off');
-    }
-}
-
-main();
