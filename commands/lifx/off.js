@@ -1,5 +1,6 @@
 module.exports = {
     name: "off",
+    aliases: ["lights-off", "lightsoff"],
     description: "Turn all the lights off!",
 
     run: async(client, message, args) => {

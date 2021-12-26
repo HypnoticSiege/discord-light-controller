@@ -34,12 +34,7 @@ readdir("./events/", (err, files) => {
 });
 
 client.on('ready', () => {
+    const application = require('./app/app');
+    application(client)
     console.log(`Logged in as ${client.user.tag}!`);
 });
-
-async function main() {
-    const color = config.colors.find(x => x.name == 'blue').hex
-    console.log(color);
-}
-
-main();

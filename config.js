@@ -1,16 +1,21 @@
 module.exports = {
-    //DiscordConfiguration
+    //Discord Configuration
     discord: {
         token: '',
         prefix: '!'
     },
 
-    //LifxConfiguration
+    //Lifx Configuration
     lifx: {
         token: 'ccc5c1e8b368b42850d7b92e3dff855161160795b742c03bd12bf41f68b0a227'
     },
 
-    //ColorConfiguration
+    //Dashboard Configuration
+    dashboard: {
+        port: 80
+    },
+
+    //Color Configuration
     colors: [
         { name: "aliceblue", hex: "#f0f8ff" },
         { name: "antiquewhite", hex: "#faebd7" },
