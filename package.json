@@ -4,7 +4,11 @@
     "description": " Control your Smart Lights via a Discord Bot.",
     "main": "index.js",
     "scripts": {
-        "start": "node ."
+        "clean": "rimraf dist",
+        "build": "yarn clean && tsc -p .",
+        "start": "node dist/index.js",
+        "deploy:guild": "node discord-deploy/guild.js",
+        "deploy:global": "node discord-deploy/global.js"
     },
     "repository": {
         "type": "git",
@@ -13,12 +17,12 @@
     "author": "HypnoticSiege (Luis Quezada)",
     "license": "ISC",
     "dependencies": {
-        "body-parser": "^1.19.1",
-        "discord.js": "^12.5.3",
-        "ejs": "^3.1.6",
-        "express": "^4.17.2",
-        "fs": "^0.0.1-security",
-        "lifxjs": "^1.1.0",
-        "path": "^0.12.7"
+        "discord.js": "^14.6.0",
+        "dotenv": "^16.0.3",
+        "global": "^4.4.0",
+        "lifxjs": "^1.1.0"
+    },
+    "devDependencies": {
+        "typescript": "^4.8.4"
     }
 }
