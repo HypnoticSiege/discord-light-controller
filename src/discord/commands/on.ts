@@ -1,5 +1,6 @@
-import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js';
 import lifxUtils from '../../lifx/utils';
+import discordUtils from '../utils';
 require('dotenv').config();
 
 module.exports = {
@@ -8,28 +9,16 @@ module.exports = {
 		.setDescription('Turn on all of my lights!'),
     async execute(interaction: any) {
         try {
-            const embed = new EmbedBuilder()
-                .setColor(0x00FF00)
-                .setTitle('Lights turned ON')
-                .setAuthor({
-                    name: interaction.user.username + '#' + interaction.user.discriminator,
-                    iconURL: interaction.user.avatarURL()
-                })
-                .setTimestamp()
-                .setFooter({
-                    text: "Hypnotic's Light Controller",
-                    iconURL: "https://hypnoticsiege.net/assets/logo.png"
-                })
-
             await lifxUtils.powerAllOn();
+
+            await discordUtils.logEmbed(interaction, {
+                title: 'Lights turned ON',
+                color: 0x00FF00
+            });
 
             await interaction.reply({
                 content: "Successfully turned all lights on!",
                 ephemeral: true,
-            });
-
-            await interaction.guild.channels.cache.get(process.env.discord_logging).send({
-                embeds: [embed]
             });
         } catch (error) {
             await interaction.reply({
