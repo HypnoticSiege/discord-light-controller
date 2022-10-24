@@ -1,5 +1,6 @@
 import { SlashCommandBuilder, EmbedBuilder } from 'discord.js';
 import lifxClient from '../../lifx/client';
+require('dotenv').config();
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -26,8 +27,15 @@ module.exports = {
                 iconURL: "https://hypnoticsiege.net/assets/logo.png"
             })
         
-        interaction.guild.channels.cache.get('1033886936718393344').send({
-            embeds: [embed]
-        })
+        try {
+            interaction.guild.channels.cache.get(process.env.discord_logging).send({
+                embeds: [embed]
+            });
+        } catch (error) {
+            return interaction.reply({
+                content: "Could not log!",
+                ephemeral: true
+            })
+        };
 	},
 };
