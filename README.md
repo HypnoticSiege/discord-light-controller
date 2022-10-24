@@ -6,6 +6,7 @@ I've got a lot of future plans of features and updates for this project.. let's 
 - Web-Based Dashboard in either Express/EJS or Vue w/ Express backend
 - Light Modes (Police, Smooth RGB, Flashing, ect)
 - Per light commands?
+- Get a light's current power status
 
 
 ## Credits
