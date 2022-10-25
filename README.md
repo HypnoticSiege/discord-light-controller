@@ -1,5 +1,5 @@
 # Discord Light Contoller
- Control your Smart Lights via a Discord Bot.
+ Control your Lifx Smart Lights via a Discord Bot.
 
 ## Installation
 - First off clone the repository using `git` or download directly off of GitHub.
