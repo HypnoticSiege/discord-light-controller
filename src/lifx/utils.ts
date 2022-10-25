@@ -16,13 +16,13 @@ const setColor = async function (color: string) {
             hex: color
         });
 
-        return true;
+        return color;
     } else if (dbValidate) {
         await lifxClient.color.all({
             hex: dbValidate.hex
         });
 
-        return true;
+        return dbValidate.hex;
     } else {
         return false;
     }

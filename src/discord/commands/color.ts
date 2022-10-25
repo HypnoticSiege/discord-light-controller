@@ -11,11 +11,11 @@ module.exports = {
     async execute(interaction: any) {
         try {
             let color = interaction.options.getString('color');
-            await lifxUtils.setColor(color);
+            let setColor = await lifxUtils.setColor(color);
 
             await discordUtils.logEmbed(interaction, {
                 title: `Changed color to \`${color}\``,
-                color: color
+                color: setColor
             });
             
             await interaction.reply({
