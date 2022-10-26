@@ -1,9 +1,10 @@
 import discordClient from './discord/client';
 import lifxClient from './lifx/client';
+import webcamClient from './webcam';
 import { Events } from 'discord.js';
 
-discordClient.once(Events.ClientReady, (c:any) => {
-	console.log(`Ready! Logged in as ${c.user.tag}`);
+discordClient.once(Events.ClientReady, async (c:any) => {
+    console.log(`Ready! Logged in as ${c.user.tag}`);
 });
 
 discordClient.on(Events.InteractionCreate, async (interaction) => {
@@ -19,6 +20,7 @@ discordClient.on(Events.InteractionCreate, async (interaction) => {
     };
 
     try {
+        await webcamClient.captureNewFrame();
         await command.execute(interaction);
     } catch (error) {
         console.error(error);
