@@ -36,4 +36,7 @@ I've got a lot of future plans of features and updates for this project.. let's 
 
 ## Credits
 Huge shout out the the following people/organizations for making Discord Light Controller possible with my limited knowledge on the new v13/v14 Discord JS Library!
-- [Discord JS Guide](https://discordjs.guide/)
+- [Discord JS Guide](https://discordjs.guide/)  
+
+Tazio and his legacy Discord Bot called "Lyfe" also contributed heavily to the idea and execution of this project. The bot had a basic Lifx Controller along with other great commands!
+- [Tazio de Bruin](https://en.tazio.nl/)
