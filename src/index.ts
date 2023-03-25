@@ -1,6 +1,5 @@
 import discordClient from './discord/client';
 import lifxClient from './lifx/client';
-import webcamClient from './webcam';
 import { Events } from 'discord.js';
 
 discordClient.once(Events.ClientReady, async (c:any) => {
@@ -20,7 +19,6 @@ discordClient.on(Events.InteractionCreate, async (interaction) => {
     };
 
     try {
-        await webcamClient.captureNewFrame();
         await command.execute(interaction);
     } catch (error) {
         console.error(error);
