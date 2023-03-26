@@ -1,9 +1,12 @@
 import discordClient from './discord/client';
-import lifxClient from './lifx/client';
-import { Events } from 'discord.js';
+import { Events, ActivityType } from 'discord.js';
 
 discordClient.once(Events.ClientReady, async (c:any) => {
     console.log(`Ready! Logged in as ${c.user.tag}`);
+    discordClient?.user?.setActivity({
+        name: "the lights go out!",
+        type: ActivityType.Watching
+    });
 });
 
 discordClient.on(Events.InteractionCreate, async (interaction) => {
